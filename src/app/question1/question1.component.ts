@@ -14,6 +14,9 @@ export class Question1Component implements OnInit {
 
   constructor() { }
 
+  ngOnInit(): void {
+  }
+
   isPrime(num) {
     for(var i = 2; i < num; i++)
       if(num % i === 0) return false;
@@ -30,16 +33,6 @@ export class Question1Component implements OnInit {
           this.isPerfectSquare(5*numberToCheck*numberToCheck - 4);
   }
 
-  ngOnInit(): void {
-  }
-
-  onBlurNumber(e){
-    if(e.target.value){
-      this.nval = Math.round(e.target.value).toString();
-    }
-    this.validation();
-  }
-
   validation(){
     if(this.calMethodSelector){
       if(this.calMethodSelector === 'isPrime'){
@@ -50,6 +43,16 @@ export class Question1Component implements OnInit {
       }
     }
   }
+
+
+  onBlurNumber(e){
+    if(e.target.value){
+      this.nval = Math.round(e.target.value).toString();
+    }
+    this.validation();
+  }
+
+  
 
   onChangeCalMethod(){
     this.validation();
