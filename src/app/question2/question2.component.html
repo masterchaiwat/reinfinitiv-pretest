@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div>Question 2 [Answer]</div>
+<input type="text" name="searchStuff" [(ngModel)]="searchStuff"  >
+
+<div *ngIf="somethings?.length > 0">
+  <div class="row">
+    <table border="1">
+      <tr *ngFor="let something of somethings|filter:searchStuff" >
+        <td>{{something}}</td>
+      </tr>
+  </table>
+  </div>

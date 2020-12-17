@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+
+<div>
+    <table border="1" class="tb">
+        <tr>
+            <td class="c1"><input type="text" name="nval" OnlyNumber="true" [(ngModel)]="nval" (blur)="onBlurNumber($event)" ></td>
+            <td >
+                <select  name="calMethod"  id="calMethod" [(ngModel)]="calMethodSelector" (change)="onChangeCalMethod()">
+                    <option *ngFor="let method of calMethods" [value]="method">{{ method }}</option>
+                </select>
+            </td>
+            <td class="c3">{{checker}}</td>
+        </tr>
+    </table>
+</div>
